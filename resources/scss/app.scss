@@ -1,0 +1,18 @@
+.ps-3, px-3 {
+  padding-left: 1rem !important;
+}
+
+
+[data-toggle="slide"]{
+  cursor:pointer;
+}
+
+
+span.alert-danger, span.alert{
+  position: relative;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: transparent !important;
+}
