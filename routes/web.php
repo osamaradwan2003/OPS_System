@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\CompanySetting;
+use \App\Http\Controllers\StoresController;
+
+Auth::routes();
 
 Route::get('/', function () {
     return view('pages.home', ['title'=>'Home']);
@@ -24,11 +27,27 @@ Route::get('/home', function () {
   return view('pages.home', ['title'=>'Home']);
 })->middleware('auth')->name('home2');
 
-Auth::routes();
 
 
 Route::prefix('company/setting')->middleware('auth')->name('company.')->group(function (){
-  Route::get('/', [CompanySetting::class, 'index'])->name('setting');
-  Route::post('/saveInfo', [CompanySetting::class, 'saveInfo'])->name('saveInfo');
+  Route::get(
+    '/', [CompanySetting::class, 'index']
+  )->name('setting');
+  Route::post(
+    '/saveInfo',
+    [CompanySetting::class, 'saveInfo']
+  )->name('saveInfo');
+});
+
+Route::prefix('/stores')->middleware('auth')->name('stores.')->group(function (){
+  Route::any(
+    '/add',
+    [StoresController::class, 'add']
+  )->name('add');
+  Route::any(
+    '/edit/{id?}',
+    [StoresController::class, 'edit'])
+    ->where('id', '[0-9]+')
+    ->name('edit');
 });
 

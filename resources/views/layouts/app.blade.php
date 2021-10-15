@@ -24,6 +24,9 @@
   <div class="container-fluid">
     <br>
     <!-- main-content -->
+    @if(session('status'))
+      @include('includes.alert')
+    @endif;
   @yield('content')
   <!-- end main-content -->
   </div>

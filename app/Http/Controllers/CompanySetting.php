@@ -36,7 +36,6 @@ class CompanySetting extends BaseController
     {
       if(!$req->isMethod('POST')){
         redirect(route('company.settings'));
-
       }
 
       $validate = $req->validate(

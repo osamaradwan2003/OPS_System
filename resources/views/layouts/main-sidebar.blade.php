@@ -61,8 +61,8 @@
               <i class="la la-boxes side-menu__icon"></i>
               <span class="side-menu__label">stores</span><i class="angle fe fe-chevron-down"></i></a>
             <ul class="slide-menu">
-              <li><a class="slide-item" href="#">Add store</a></li>
-              <li><a class="slide-item" href="#">Edit store</a></li>
+              <li><a class="slide-item" href="{{ route('stores.add') }}">Add store</a></li>
+              <li><a class="slide-item" href="{{ route('stores.edit') }}">Edit store</a></li>
               <li><a class="slide-item" href="#">All stores</a></li>
               <li><a class="slide-item" href="#">Reports</a></li>
             </ul>
