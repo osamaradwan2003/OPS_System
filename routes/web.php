@@ -1,7 +1,12 @@
 <?php
 
+
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CompanySetting;
+use \App\Http\Controllers\StoresController;
+use App\Http\Controllers\WalletController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\CompanySetting;
-use \App\Http\Controllers\StoresController;
 
 Auth::routes();
 
@@ -45,9 +48,68 @@ Route::prefix('/stores')->middleware('auth')->name('stores.')->group(function ()
     [StoresController::class, 'add']
   )->name('add');
   Route::any(
-    '/edit/{id?}',
+    '/edit/{id}',
     [StoresController::class, 'edit'])
     ->where('id', '[0-9]+')
     ->name('edit');
+
+  Route::get(
+    '/all',
+    [StoresController::class, 'all']
+  )->name('all');
+
+
+  Route::get(
+    '/delete/{id}',
+    [StoresController::class, 'delete']
+  )->name('delete');
+
 });
 
+Route::prefix('/wallet')->middleware('auth')->name('wallet.')->group(function (){
+  Route::any(
+    '/add',
+    [WalletController::class, 'add']
+  )->name('add');
+  Route::any(
+    '/edit/{id}',
+    [WalletController::class, 'edit'])
+    ->where('id', '[0-9]+')
+    ->name('edit');
+
+  Route::get(
+    '/all',
+    [WalletController::class, 'all']
+  )->name('all');
+
+
+  Route::get(
+    '/delete/{id}',
+    [WalletController::class, 'delete']
+  )->name('delete');
+
+});
+
+Route::prefix('/employee')->middleware('auth')->name('employee.')->group(function (){
+  Route::any(
+    '/add',
+    [EmployeeController::class, 'add']
+  )->name('add');
+  Route::any(
+    '/edit/{id}',
+    [EmployeeController::class, 'edit'])
+    ->where('id', '[0-9]+')
+    ->name('edit');
+
+  Route::get(
+    '/all',
+    [EmployeeController::class, 'all']
+  )->name('all');
+
+
+  Route::get(
+    '/delete/{id}',
+    [EmployeeController::class, 'delete']
+  )->name('delete');
+
+});

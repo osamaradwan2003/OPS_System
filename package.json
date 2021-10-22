@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "coreui": "^0.1.5"
+        "coreui": "^0.1.5",
+        "sweetalert2": "^11.1.9"
     }
 }

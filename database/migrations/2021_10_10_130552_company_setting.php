@@ -14,6 +14,7 @@ class CompanySetting extends Migration
     public function up()
     {
         Schema::create('companysetting', function (Blueprint $table) {
+          $table->integerIncrements('id');
           $table->string('company_name');
           $table->string('company_nice_name');
           $table->string('email')->nullable();
@@ -23,6 +24,8 @@ class CompanySetting extends Migration
           $table->string('facebook')->nullable();
           $table->string('twitter')->nullable();
           $table->string('company_logo');
+          $table->timestamp('created_at');
+          $table->timestamp('updated_at');
         });
 
     }

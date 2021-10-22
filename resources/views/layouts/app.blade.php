@@ -14,24 +14,30 @@
     <img src="{{asset('assets/img/loader.svg')}}" class="loader-img" alt="Loader">
   </div>
   <!-- /Loader -->
-
-  <div class="main-content app-content">
-    @if (Auth::check())
-      @include('layouts.main-header') <!-- header -->
-      @include('layouts.main-sidebar') <!-- sidebar -->
-    @endif
-<!-- container -->
-  <div class="container-fluid">
-    <br>
-    <!-- main-content -->
-    @if(session('status'))
-      @include('includes.alert')
-    @endif;
-  @yield('content')
-  <!-- end main-content -->
+  <div class="page is-expanded">
+  @if (Auth::check())
+    @include('layouts.main-sidebar')
+    <!-- sidebar -->
+  @endif
+  <!-- main-content -->
+    <div class="main-content app-content">
+    @if(Auth::check())
+      <!-- header -->
+        @include('layouts.main-header')
+      @endif
+      <div class="jumps-prevent"></div>
+      <!-- container -->
+      <div class="container-fluid">
+        <br>
+        @if(session('status'))
+          @include('includes.widgets.alert')
+        @endif
+        @yield('content')
+        @include('layouts.footer')
+      </div>
+    </div>
   </div>
-  @include('layouts.footer')
-
+  <!-- end main-content -->
   @include('layouts.footer-scripts')
 </body>
 </html>

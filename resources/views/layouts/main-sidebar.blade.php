@@ -62,8 +62,7 @@
               <span class="side-menu__label">stores</span><i class="angle fe fe-chevron-down"></i></a>
             <ul class="slide-menu">
               <li><a class="slide-item" href="{{ route('stores.add') }}">Add store</a></li>
-              <li><a class="slide-item" href="{{ route('stores.edit') }}">Edit store</a></li>
-              <li><a class="slide-item" href="#">All stores</a></li>
+              <li><a class="slide-item" href="{{ route('stores.all') }}">All stores</a></li>
               <li><a class="slide-item" href="#">Reports</a></li>
             </ul>
           </li>
@@ -81,12 +80,22 @@
           </li>
           <li class="slide">
             <a class="side-menu__item" data-toggle="slide">
-              <i class="la la-user-tie side-menu__icon"></i>
+              <i class="las la-user-friends side-menu__icon"></i>
               <span class="side-menu__label">Sellers</span><i class="angle fe fe-chevron-down"></i></a>
             <ul class="slide-menu">
               <li><a class="slide-item" href="#">Add Sellers</a></li>
               <li><a class="slide-item" href="#">Edit Sellers</a></li>
               <li><a class="slide-item" href="#">All Sellers</a></li>
+              <li><a class="slide-item" href="#">Reports</a></li>
+            </ul>
+          </li>
+          <li class="slide">
+            <a class="side-menu__item" data-toggle="slide">
+              <i class="la la-user-tie side-menu__icon"></i>
+              <span class="side-menu__label">Employees</span><i class="angle fe fe-chevron-down"></i></a>
+            <ul class="slide-menu">
+              <li><a class="slide-item" href="{{ route('employee.add') }}">Add Employee</a></li>
+              <li><a class="slide-item" href="{{ route('employee.all') }}">All Employees</a></li>
               <li><a class="slide-item" href="#">Reports</a></li>
             </ul>
           </li>
@@ -96,9 +105,8 @@
               <i class="las la-wallet side-menu__icon"></i>
               <span class="side-menu__label">Wallet Manger</span><i class="angle fe fe-chevron-down"></i></a>
             <ul class="slide-menu">
-              <li><a class="slide-item" href="#">Add Wallet</a></li>
-              <li><a class="slide-item" href="#">Edit Wallet</a></li>
-              <li><a class="slide-item" href="#">All Wallets</a></li>
+              <li><a class="slide-item" href="{{ route('wallet.add') }}">Add Wallet</a></li>
+              <li><a class="slide-item" href="{{ route('wallet.all') }}">All Wallets</a></li>
               <li><a class="slide-item" href="#">Reports</a></li>
             </ul>
           </li>

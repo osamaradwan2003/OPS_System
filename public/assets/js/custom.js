@@ -1,10 +1,10 @@
 $(function() {
 	'use strict'
-	
+
 	// ______________LOADER
 	$("#global-loader").fadeOut("slow");
-	
-	
+
+
 	// This template is mobile first so active menu in navbar
 	// has submenu displayed by default but not in desktop
 	// so the code below will hide the active menu if it's in desktop
@@ -22,8 +22,8 @@ $(function() {
 	$('.country-flag1').on('click', function(e){
 		$('.main-header .dropdown > a').parent().siblings().removeClass('show');
 	});
-	
-	
+
+
 	// ______________Full screen
 	$(document).on("click", ".fullscreen-button", function toggleFullScreen() {
 		if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
@@ -49,20 +49,20 @@ $(function() {
 		}
 	})
 
-	// ______________ RATING STAR
-	var ratingOptions = {
-		selectors: {
-			starsSelector: '.rating-stars',
-			starSelector: '.rating-star',
-			starActiveClass: 'is--active',
-			starHoverClass: 'is--hover',
-			starNoHoverClass: 'is--no-hover',
-			targetFormElementSelector: '.rating-value'
-		}
-	};
-	$(".rating-stars").ratingStars(ratingOptions);
-	
-	
+	// // ______________ RATING STAR
+	// var ratingOptions = {
+	// 	selectors: {
+	// 		starsSelector: '.rating-stars',
+	// 		starSelector: '.rating-star',
+	// 		starActiveClass: 'is--active',
+	// 		starHoverClass: 'is--hover',
+	// 		starNoHoverClass: 'is--no-hover',
+	// 		targetFormElementSelector: '.rating-value'
+	// 	}
+	// };
+	// $(".rating-stars").ratingStars(ratingOptions);
+
+
 	// ______________Cover Image
 	$(".cover-image").each(function() {
 		var attr = $(this).attr('data-image-src');
@@ -70,21 +70,21 @@ $(function() {
 			$(this).css('background', 'url(' + attr + ') center center');
 		}
 	});
-	
-	
+
+
 	// ______________Toast
-	$(".toast").toast();	
-	
-	/* Headerfixed */
+	$(".toast").toast();
+
+	/* Header fixed */
 	$(window).on("scroll", function(e){
 		if ($(window).scrollTop() >= 66) {
-			$('main-header').addClass('fixed-header');
+			$('.main-header').addClass('fixed-header');
 		}
 		else {
 			$('.main-header').removeClass('fixed-header');
 		}
     });
-	
+
 	// ______________Search
 	$('body, .main-header form[role="search"] button[type="reset"]').on('click keyup', function(event) {
 		if (event.which == 27 && $('.main-header form[role="search"]').hasClass('active') ||
@@ -113,11 +113,11 @@ $(function() {
 		$('#showSearchTerm').text($input.val());
 		closeSearch()
 	});
-	
-	
-	
+
+
+
 	/* ----------------------------------- */
-	
+
 	// Showing submenu in navbar while hiding previous open submenu
 	$('.main-navbar .with-sub').on('click', function(e) {
 		e.preventDefault();
@@ -201,7 +201,7 @@ $(function() {
 		e.preventDefault();
 		$('body').removeClass('main-header-menu-show');
 	})
-	
+
 	$(".card-header-right .card-option .fe fe-chevron-left").on("click", function() {
 		var a = $(this);
 		if (a.hasClass("icofont-simple-right")) {
@@ -215,8 +215,8 @@ $(function() {
 		}
 		$(this).toggleClass("fe fe-chevron-right").fadeIn("slow")
 	});
-	
-	 // ___________TOOLTIP	
+
+	 // ___________TOOLTIP
 	$('[data-toggle="tooltip"]').tooltip();
 	// colored tooltip
 	$('[data-toggle="tooltip-primary"]').tooltip({
@@ -225,7 +225,7 @@ $(function() {
 	$('[data-toggle="tooltip-secondary"]').tooltip({
 		template: '<div class="tooltip tooltip-secondary" role="tooltip"><div class="arrow"><\/div><div class="tooltip-inner"><\/div><\/div>'
 	});
-	
+
 	// __________POPOVER
 	$('[data-toggle="popover"]').popover();
 	$('[data-popover-color="head-primary"]').popover({
@@ -249,11 +249,11 @@ $(function() {
 			}
 		});
 	});
-	
+
 	// Enable Eva-icons with SVG markup
 	eva.replace();
-	
-	
+
+
 	// ______________Horizontal-menu Active Class
 	$(document).ready(function() {
 		$(".horizontalMenu-list li a").each(function() {
@@ -266,8 +266,8 @@ $(function() {
 			}
 		});
 	});
-	
-	
+
+
 	// ______________Active Class
 	$(document).ready(function() {
 		$(".horizontalMenu-list li a").each(function() {
@@ -298,8 +298,8 @@ $(function() {
 			}
 		});
 	});
-	
-	
+
+
 	// ______________ Back to Top
 	$(window).on("scroll", function(e) {
 		if ($(this).scrollTop() > 0) {
@@ -314,11 +314,11 @@ $(function() {
 		}, 600);
 		return false;
 	});
-	
-	
-	
-	// ______________Skins 
-		
+
+
+
+	// ______________Skins
+
 	////////////////////////////////////////////////////
 	/*  ############# Horizontal version ########*/
 	//////////////////////////////////////////////////
@@ -339,8 +339,8 @@ $(function() {
 	/* ###########  Horizontal gradient  ###########*/
 
 	// $('body').addClass(' horizontal-gradient'); //
-		
-		
+
+
 	////////////////////////////////////////////////////
 	/*  ############# Leftmenu version ########*/
 	//////////////////////////////////////////////////
@@ -365,8 +365,8 @@ $(function() {
 	////////////////////////////////////////////////////
 	/*  ############# Leftmenu Light Image ########*/
 	//////////////////////////////////////////////////
-		
-		
+
+
 	/* ###########  backgroundimage-1  ###########*/
 
 	// $('body').addClass(' leftbgimage1'); //
@@ -392,8 +392,7 @@ $(function() {
 	/*  ############# Body Style ########*/
 	//////////////////////////////////////////////////
 
-	// $('body').addClass(' body-style1'); //
-	
-	
+	$('body').addClass(' body-style1');
+
+
 });
-	
